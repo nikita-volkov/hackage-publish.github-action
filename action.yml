@@ -23,7 +23,7 @@ inputs:
   packagesPath:
     description: 'Path that contains packages tarbals'
     required: false
-    default: dist-newstyle/sdist/
+    default: dist-newstyle/sdist
 
   docsPath:
     description: 'Path that contains packages documentation tarbals'
