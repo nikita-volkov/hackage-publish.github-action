@@ -42,13 +42,13 @@ runs:
               TARGET_URL="${{ inputs.server }}/packages/candidates";
               PACKAGE_URL="${{ inputs.server }}/package/$PACKAGE_NAME/candidate"
               HACKAGE_STATUS=404
-          fi
+            fi
 
           if [ "$HACKAGE_STATUS" != "404" ]
-          then
-            echo "Package ${PACKAGE_NAME}" already exists on Hackage.
-            exit 1
-          fi
+            then
+              echo "Package ${PACKAGE_NAME}" already exists on Hackage.
+              exit 1
+            fi
 
           echo "Uploading ${PACKAGE_NAME} to ${TARGET_URL}"
           curl -X POST -f --header "${HACKAGE_AUTH_HEADER}" ${TARGET_URL} -F "package=@$PACKAGE_TARBALL"
