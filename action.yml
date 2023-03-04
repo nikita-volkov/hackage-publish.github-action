@@ -27,6 +27,12 @@ runs:
     - name: Publish packages
       shell: bash
       run: |
+          if [ -z "${{ inputs.token }}" ]
+            then
+              echo "Token is empty"
+              exit 1
+            fi
+
           PACKAGE_TARBALL=$(cabal sdist | tail -1)
 
           HACKAGE_AUTH_HEADER="Authorization: X-ApiKey ${{ inputs.token }}"
