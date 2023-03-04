@@ -3,7 +3,7 @@ description: Publish Haskell packages to Hackage
 
 branding:
   icon: 'upload'
-  color: 'green'
+  color: 'magenta'
 
 inputs:
   token:
